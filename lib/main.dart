@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/pages/cart_page.dart';
 import 'package:foodapp/pages/home_page.dart';
 import 'package:foodapp/pages/products.dart';
 import 'package:foodapp/widget/main_page.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductPage(),
+      home: CartPage(),
     );
   }
 }
