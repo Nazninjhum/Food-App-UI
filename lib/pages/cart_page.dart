@@ -35,7 +35,9 @@ class _CartPageState extends State<CartPage> {
                       color: Colors.white,
                       shape: BoxShape.rectangle,
                     ),
-                    child:IconButton(onPressed: (){},icon: Icon(Icons.arrow_back_ios),),
+                    child:IconButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (contex)=>ProductPage()));
+                    },icon: Icon(Icons.arrow_back_ios),),
                   ),
                   SizedBox(width: 370,),
                   Container(
@@ -46,7 +48,7 @@ class _CartPageState extends State<CartPage> {
                       shape: BoxShape.rectangle,
                     ),
                     child:IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (contex)=>ProductPage()));
+
                     },
                       icon: Icon(Icons.delete_outline_outlined,color: Colors.black,),),
                   ),
