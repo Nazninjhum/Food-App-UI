@@ -50,9 +50,10 @@ class RestaurantList extends StatelessWidget {
                             ),
                             SizedBox(height: 15,),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(fitem[index].name,
                                       style: TextStyle(fontSize: 13,color: Colors.black,

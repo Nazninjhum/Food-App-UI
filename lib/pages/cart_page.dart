@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/pages/home_page.dart';
 import 'package:foodapp/pages/products.dart';
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -42,17 +43,12 @@ class _CartPageState extends State<CartPage> {
                     width: 40.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            blurRadius: 6.0,
-                            spreadRadius: 4.0,
-                            offset: Offset(0.0, 3.0))
-                      ],
-                      color: Colors.white,
                       shape: BoxShape.rectangle,
                     ),
-                    child:IconButton(onPressed: (){},icon: Icon(Icons.delete_outline_outlined,color: Colors.black,),),
+                    child:IconButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (contex)=>ProductPage()));
+                    },
+                      icon: Icon(Icons.delete_outline_outlined,color: Colors.black,),),
                   ),
                 ],
               ),
@@ -217,7 +213,7 @@ class _CartPageState extends State<CartPage> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 17,
           ),
           Container(
             child: Row(
@@ -231,7 +227,7 @@ class _CartPageState extends State<CartPage> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 17,
           ),
           Container(
             height: 230,
@@ -243,7 +239,7 @@ class _CartPageState extends State<CartPage> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20,top: 25,bottom: 5),
+              padding: const EdgeInsets.only(left: 25,right: 25,top: 25,bottom: 5),
               child: Container(
                 child: Column(
                   children: [
@@ -257,7 +253,7 @@ class _CartPageState extends State<CartPage> {
                           ],
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 7,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -267,7 +263,7 @@ class _CartPageState extends State<CartPage> {
                           ],
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 7,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -277,14 +273,14 @@ class _CartPageState extends State<CartPage> {
                           ],
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 7,
                         ),
-                        Text('-----------------------------------------------',style: TextStyle(
+                        Text('---------------------------------------------',style: TextStyle(
                           color: Colors.black,
-                          fontSize: 30
+                          fontSize: 35
                         ),),
                         SizedBox(
-                          height: 8,
+                          height: 7,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -300,10 +296,10 @@ class _CartPageState extends State<CartPage> {
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 14,
                         ),
                         FlatButton(
-                          color: Colors.black,
+                          color: Colors.yellow,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(20),
@@ -313,7 +309,7 @@ class _CartPageState extends State<CartPage> {
                             ),
                           ),
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (contex)=>ProductPage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (contex)=>HomePage()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(15.0),
@@ -324,10 +320,10 @@ class _CartPageState extends State<CartPage> {
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),),
                                 SizedBox(width: 50,),
-                                Icon(Icons.arrow_forward,color: Colors.white,size: 20,),
+                                Icon(Icons.arrow_forward,color: Colors.black,size: 20,),
                               ],
                             ),
                           ),

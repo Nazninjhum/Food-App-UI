@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/models/restaurantlist.dart';
+import 'package:foodapp/pages/products.dart';
 import 'package:foodapp/widget/home_details.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,8 +24,8 @@ TabController _tabController = TabController(length: 5, vsync: this);
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 50.0,
-                  width: 50.0,
+                  height: 40.0,
+                  width: 40.0,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
@@ -42,8 +43,8 @@ TabController _tabController = TabController(length: 5, vsync: this);
                 ),
                 Text("Search Food",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
                 Container(
-                  height: 50.0,
-                  width: 50.0,
+                  height: 40.0,
+                  width: 40.0,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
@@ -111,6 +112,7 @@ TabController _tabController = TabController(length: 5, vsync: this);
                     isScrollable: true,
                     controller: _tabController,
                     indicatorSize: TabBarIndicatorSize.label,
+                    //unselectedLabelColor: Colors.white,
                     tabs: [
                       Tab(
                         child: Container(
@@ -122,7 +124,7 @@ TabController _tabController = TabController(length: 5, vsync: this);
                           margin: EdgeInsets.only(right: 20,top: 3,bottom: 3),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Colors.white.withOpacity(0.5),
+                            color: Colors.yellow.withOpacity(0.5),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black.withOpacity(0.10),
@@ -150,7 +152,7 @@ TabController _tabController = TabController(length: 5, vsync: this);
                                 ),
                               ),
                               Text("Fast food",
-                                style: TextStyle(fontSize: 10,color: Colors.purple,fontWeight: FontWeight.bold),),
+                                style: TextStyle(fontSize: 10,color: Colors.black,fontWeight: FontWeight.bold),),
                             ],
                           ),
 
@@ -357,7 +359,9 @@ TabController _tabController = TabController(length: 5, vsync: this);
                               itemCount: fooditems.length,
                               itemBuilder: (context, index){
                                 return GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (contex)=>ProductPage()));
+                                  },
                                   child: Container(
                                     alignment: Alignment.center,
                                     padding: EdgeInsets.symmetric(
@@ -390,6 +394,7 @@ TabController _tabController = TabController(length: 5, vsync: this);
                                         SizedBox(height: 15,),
                                         Column(
                                           mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(fooditems[index].foodname,
                                               style: TextStyle(fontSize: 13,color: Colors.black,

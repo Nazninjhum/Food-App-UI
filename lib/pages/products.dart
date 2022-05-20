@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/pages/cart_page.dart';
+import 'package:foodapp/pages/home_page.dart';
 class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
 
@@ -43,8 +44,8 @@ class _ProductPageState extends State<ProductPage> {
               child: Row(
                 children: [
                   Container(
-                    height: 50.0,
-                    width: 50.0,
+                    height: 40.0,
+                    width: 40.0,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
@@ -57,22 +58,16 @@ class _ProductPageState extends State<ProductPage> {
                         color: Colors.white,
                         shape: BoxShape.rectangle,
                         ),
-                    child:IconButton(onPressed: (){},icon: Icon(Icons.arrow_back_ios),),
+                    child:IconButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (contex)=>HomePage()));
+                    },icon: Icon(Icons.arrow_back_ios),),
                   ),
                   SizedBox(width: 350,),
                   Container(
-                    height: 50.0,
-                    width: 50.0,
+                    height: 40.0,
+                    width: 40.0,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              blurRadius: 6.0,
-                              spreadRadius: 4.0,
-                              offset: Offset(0.0, 3.0))
-                        ],
-                        color: Colors.white,
                         shape: BoxShape.rectangle,
                         ),
                     child:IconButton(onPressed: (){},icon: Icon(Icons.favorite,color: Colors.red,),),
